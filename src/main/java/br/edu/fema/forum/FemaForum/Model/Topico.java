@@ -28,15 +28,12 @@ public class Topico {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Topico topico = (Topico) o;
-        return Objects.equals(id, topico.id) && Objects.equals(titulo, topico.titulo) && Objects.equals(mensagem, topico.mensagem) && Objects.equals(dataCriacao, topico.dataCriacao) && status == topico.status && Objects.equals(autor, topico.autor) && Objects.equals(curso, topico.curso) && Objects.equals(respostas, topico.respostas);
+        return Objects.equals(id, topico.id);
     }
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        return result;
+        return Objects.hash(id);
     }
 
     public Long getId() {
