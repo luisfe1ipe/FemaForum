@@ -10,6 +10,12 @@ public class Resposta {
     private LocalDateTime dataCriacao = LocalDateTime.now();
     private Boolean solucao = false;
 
+    public Resposta(Long id, String mensagem, Topico topico, LocalDateTime dataCriacao) {
+        this.id = id;
+        this.mensagem = mensagem;
+        this.topico = topico;
+        this.dataCriacao = dataCriacao;
+    }
 
     @Override
     public boolean equals(Object o) {
