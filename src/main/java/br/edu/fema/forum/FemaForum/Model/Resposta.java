@@ -1,6 +1,7 @@
 package br.edu.fema.forum.FemaForum.Model;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Resposta {
     private Long id;
@@ -8,6 +9,14 @@ public class Resposta {
     private Topico topico;
     private LocalDateTime dataCriacao = LocalDateTime.now();
     private Boolean solucao = false;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Resposta resposta = (Resposta) o;
+        return Objects.equals(id, resposta.id) && Objects.equals(mensagem, resposta.mensagem) && Objects.equals(topico, resposta.topico) && Objects.equals(dataCriacao, resposta.dataCriacao) && Objects.equals(solucao, resposta.solucao);
+    }
 
     @Override
     public int hashCode() {

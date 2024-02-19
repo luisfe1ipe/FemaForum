@@ -1,5 +1,7 @@
 package br.edu.fema.forum.FemaForum.Model;
 
+import java.util.Objects;
+
 public class Curso {
 
     private Long id;
@@ -10,6 +12,14 @@ public class Curso {
     public Curso(String nome, String categoria) {
         this.nome = nome;
         this.categoria = categoria;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Curso curso = (Curso) o;
+        return Objects.equals(id, curso.id) && Objects.equals(nome, curso.nome) && Objects.equals(categoria, curso.categoria);
     }
 
     @Override
